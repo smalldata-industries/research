@@ -32,6 +32,10 @@ body {
 	line-height: 1.5em;
 }
 
+br {
+	display: none;
+}
+
 article, nav, footer {
 	width: 100%;
   padding: 0 5%;
@@ -183,8 +187,80 @@ footer {
 	padding: 40px 0;
 }
 
+@media screen and (min-width: 1280px) {
+	article, nav, footer {
+		width: 1280px;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	br {
+		display: block;
+	}
+	h1 {
+		font-size: 40px;
+	}
+	h2 {
+    font-size: 22px;
+	}
+}
+
 @media screen and (max-width: 600px) {
-	
+	article.intro {
+    height: 100%;
+    min-height: 700px;
+    border: 10px solid #FFFFFF;
+	}
+	h1 {
+		font-size: 30px;
+	}
+	h2 {
+		font-size: 18px;
+	}
+	h3.logo {
+		font-size: 14px;
+		letter-spacing: .2em;
+	}
+	h4 {
+		font-size: 22px;
+	}
+	nav {
+		padding: 40px 0;
+	}
+	a.contact {
+    font-size: 18px;
+	}
+	section {
+		width: 100%;
+	}
+	article.intro {
+		height: auto;
+		min-height: 500px;
+	}
+	article.intro section {
+		padding: 50px 0;
+	}
+	.spacer {
+		padding: 100px 0;
+	}
+	div.shape {
+    width: 94%;
+    top: 30px;
+    left: 3%;
+	}
+	div.about {
+		padding-top: 0;
+	}
+	div.about div.profile {
+    float: left;
+    width: 70%;
+    margin: 0 0 0 15%;
+	}
+	div.about h2 {
+    float: left;
+    width: 90%;
+    margin: 1.5em 5%;
+	}
 }
 
 
