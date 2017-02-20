@@ -34,13 +34,26 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
+	
+	<!-- <article class="contact-us">
+		<div class="content">
+			<form id="contact_form" method="POST" autocomplete="on">
+	      <input class="input" id="firstName" name="firstName" type="text" placeholder="First Name">
+				<input class="input" id="lastName" name="lastName" type="text" placeholder="Last Name">
+	      <input class="input" id="email" name="email" type="text" placeholder="Email Address">
+				<textarea class="input" id="message" type="text" name="message" row="6" placeholder="Message"></textarea>
+				<input id="submit" name="submit" value="Send" type="submit">
+	  	</form>
+		</div>
+	</article> -->
 
 	<article class="intro">
 		<nav>
 	    <h3 class="logo">Small Data Industries</h3>
-	    <a class="contact" href="#open-modal">Contact Us</a>
+	    <a class="contact" href="mailTo:ben@smalldata.industries?subject=What%20can%20we%20do%20for%20you%3F">Contact Us</a>
 		</nav>
 		<section>
+			<span></span>
 			<h1>We are a consultancy providing services to support the collection, exhibition, preservation, and storage of time-based media art.</h1>
 		</section>
 	</article>
@@ -48,21 +61,39 @@
 	<section class="spacer">
 		<h4>Our clients have included The Whitney Museum, The DIA Art Foundation, Cooper Hewitt, Smithsonian Design Museum, the Museum of Modern Art, and the studios of Cory Arcangel. Just to name a few.</h4>
 	</section>
+	
+		<section class="spacer">
+			<h1>What We Do</h1>
+			<span></span>
+			<ul>
+				<li><p>Facilitation of Acquisitions</p></li>
+				<li><p>Conservation Treatment / Restoration</p></li>
+				<li><p>Digitization / Format Migration</p></li>
+				<li><p>Digital Repository Management</p></li>
+			</ul>
+			<ul>
+				<li><p>Condition Assessment</p></li>
+				<li><p>Technical Documentation</p></li>
+				<li><p>Exhibition Installation</p></li>
+				<li><p>Digital Preservation Consulting</p></li>
+			</ul>
+		</section>
 
 	<article>
-		<div class="shape"></div>
 		<div class="about">
-			<div class="profile"><img alt="Ben Fino-Radin" src="img/ben.jpg" /></div>
+			<div class="shape"></div>
+			<div class="profile"><img alt="Ben Fino-Radin" src="img/small-data-ben.jpg" /></div>
 			<h2>Ben Fino-Radin founded Small Data Industries to build new models for high-caliber preservation and collections care as a service.</h2>
 		</div>
+		<p class="about">When you work with Small Data Industries, we assemble the perfect team to match your needs. Our broader international network of collaborators includes leading doers and thinkers in time-based media conservation, digital preservation, audiovisual engineering, and collections management. Here are just a few of our key collaborators: Lia Kramer, Jacob Gaboury, Mark Hellar, Maurice Schecter, and Fergus O'Connor.</p>
+	</article>
+	
+	<article class="contact">
+		<h4>Speak with us today about what we can do for you.</h4>
 	</article>
 
-	<section>
-		<h4>Speak with us today about what we can do for you. <br /><a href="#open-modal">Contact us today.</a></h4>
-	</section>
-
 	<footer>
-		<h6>&copy; 2017 Small Data Industries</h6>
+		<h6>&copy; 2017 Small Data Industries. Proudly located in Brooklyn, NY.</h6>
 	</footer>
 
 	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -72,20 +103,6 @@
 		ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
 	</script>
 	<script src="https://www.google-analytics.com/analytics.js" async defer></script>
-
-
-	<div id="open-modal" class="modal-window">
-		<div>
-			<a href="#modal-close" title="Close" class="modal-close">X</a>
-			<div>
-				<form>
-					<input placeholder="First Name">
-					<input placeholder="Last Name">
-					<textarea placeholder="Your message"></textarea>
-				</form>
-			</div>
-		</div>
-	</div>
 
 </body>
 </html>
