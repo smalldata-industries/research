@@ -469,6 +469,13 @@ form#contact_form div.terms p {
 	margin-bottom: 50px;
 }
 
+@media screen and (max-width: 600px) {
+.yearinreviewimg p {
+	font-size: 19px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+}
 .yearinreviewimg u{
 	background-color: #f1f1f1;
 	text-decoration: none;
