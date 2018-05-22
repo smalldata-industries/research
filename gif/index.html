@@ -4,9 +4,15 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Small Data Industries - Title of GIF case study</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <title>Small Data Industries - Long Live the GIF</title>
+  <meta name="description" content="A case study on the collection and preservation of animated GIFs at the Museum of the Moving Image.">
+  <meta name="author" content="Small Data Industries">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="small_data_">
+<meta name="twitter:title" content="Long Live the GIF">
+<meta name="twitter:description" content="A case study on the collection and preservation of animated GIFs at the Museum of the Moving Image.">
+<meta name="twitter:image" content="http://research.smalldata.industries/gif/img/77eyes-1.gif">
 
 
 <script
@@ -25,7 +31,7 @@
           <style type="text/css">
 body{
 	background-color: #F1E7E5;
-	color: #21254F;
+	color: #21254f;
   font-family:  'PT Mono', monospace;
   font-size: 18px;
   line-height: 1.4em;
@@ -120,7 +126,7 @@ a{
 <img src="img/momi.png" height="100px"> -->
   <div class="container">
     <h1>Long Live the GIF</h1>
-    <h5>A Study on the Curation, Acquisition, and Preservation of Animated GIFs</h5>
+    <h5>A Study on the Curation, Acquisition, and Preservation of Animated GIFs, by Small Data Industries</h5>
     <div class="row">
       <div class="col s2">
               <p class="foreward">
@@ -462,7 +468,7 @@ ffmpeg -i [file.gif] -c:v libx264 [file.mov]
 
 <p>It is now standard practice in the field of time-based media conservation to extract technical characterization metadata when assessing and acquiring digital video files. This metadata is often stored alongside the files themselves and considered analogous to the concept of representation information as defined by the Open Archives Information Systems (OAIS) standard—in other words, this metadata is treated as crucial to ensure authentic rendering over the long-term. Considering the waning native support for Animated GIFs on various popular platforms and the hazards introduced by transcoding for exhibition purposes, it is completely reasonable to suggest that when acquiring Animated GIFs one should extract technical metadata with Gifsicle (or similar tools) and store this alongside the file.</p>
 
-<p>When comparing Gifsicle to the preferred tool for metadata extraction of digital video (Mediainfo) there is a clear gap in feature sets preferred by preservationists. Namely,  Mediainfo is not only able to output its analysis as XML, it is also has been built to output XML in the PBcore metadata standard—thus not only creating well structured information, but in a format whose semantics are incredibly well documented. Gifsicle on the other hand is only capable of outputting unstructured plain text. In appendix B, we have provided a proposed sketch of an XML structure for potential adoption in Gifsicle.
+<p>When comparing Gifsicle to the preferred tool for metadata extraction of digital video (Mediainfo) there is a clear gap in feature sets preferred by preservationists. Namely,  Mediainfo is not only able to output its analysis as XML, it is also has been built to output XML in the PBcore metadata standard—thus not only creating well structured information, but in a format whose semantics are incredibly well documented. Gifsicle on the other hand is only capable of outputting unstructured plain text. 
 </p>
 
 <p>One final point of consideration when exhibiting historic Animated GIFs from the early web: it is often the case that these GIFs play back at a faster rate today, as they were limited by the slow CPUs of the time of their creation. Employing emulation to view historic Animated GIFs in something close to a period specific CPU, operating system, and web browser is highly recommended for assessing this variability when preparing for exhibition. If there is a discrepancy between period-specific playback speed, and contemporary playback speed, this can be fixed at the time of transcoding for exhibition either by manipulating the derivative video’s frame rate or using a GIF editor to manipulate frame delays to adhere to the documented original playback speed.
