@@ -11,8 +11,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="small_data_">
 <meta name="twitter:title" content="Long Live the GIF">
-<meta name="twitter:description" content="A case study on the collection and preservation of animated GIFs at the Museum of the Moving Image.">
-<meta name="twitter:image" content="http://research.smalldata.industries/gif/img/gifelevator.jpg">
+<meta name="twitter:description" content="A study on preserving animated GIFs at the Museum of the Moving Image.">
+<meta name="twitter:image" content="http://research.smalldata.industries/gif/img/movcompare.png">
 
 
 <script
@@ -421,7 +421,13 @@ With the lack of support for the GIF format in most commonly found display equip
 
 <p>When viewed in the Chrome web browser at the time of writing, we see what appears to be a marsupial of some kind, wearing glasses, and mixing chemicals in a laboratory. We like this GIF a lot, so why don’t we share it on Twitter?</p>
 
-<pre>[video version of GIF will go here]</pre>
+<center>
+<video playsinline autoplay muted loop>
+  <source src="https://video.twimg.com/tweet_video/DSjMnXkVwAARacq.mp4">
+</video>
+</center>
+
+
 
 <p>Suddenly, our marsupial is growing extra arms. Why does Twitter display our GIF incorrectly? First, as has been previously discussed, Twitter and many other platforms—even though they may go so far as overlaying what appears to be an Animated GIF with a small icon that says “GIF”—do not in fact display GIFs, but video files. After uploading, our GIF has been transcoded by Twitter to an MPEG-4 file. It is this transcoding engine that has improperly interpreted the GIF file’s instructions as to how to handle the disposal of the animation frames before displaying the next frame. Inspecting the file’s metadata with the tool Gifsicle   shows us the composition of the file, including its embedded instructions for how to deal with the clearing (or not) of the frame buffer before loading and rendering the next frame of the GIF.</p>
 
@@ -444,10 +450,6 @@ With the lack of support for the GIF format in most commonly found display equip
     disposal previous delay 0.55s
   </pre>
 
-  <p>The figure below illustrates how the frame disposition should have been interpreted and rendered by Twitter’s transcoding engine. </p>
-
-<pre>[ Figure illustrating frame disposition ]</pre>
-
 <p>Inaccurate interpretation of frame disposition is of course not the only issue we can observe in this transcoded GIF—it hardly takes a trained eye to see that extremely heavy-handed compression has been applied. Furthermore, the colors appear to have shifted slightly. Considering that artist-created Animated GIFs are almost always exhibited as transcoded digital video, as opposed to in their native format, we must explore these potential hazards introduced by transcoding. The following command could be used to transcode an Animated GIF to an h.264 encoded QuickTime file:</p>
 
 <pre>
@@ -456,11 +458,14 @@ ffmpeg -i [file.gif] -c:v libx264 [file.mov]
 
 <p>The figure below shows frame one of the original Animated GIFs on the left and on the right frame one of the derivatives h.264 encoded QuickTime file.</p>
 
-<pre>figure will go here of GIF and video side by side</pre>
+<img src="img/movcompare.png">
 
-<p>There are no visible artifacts of compression; however the careful observer will notice a subtle color shift. This has occurred because the h.264 codec<img class="imgright" src="https://web.archive.org/web/20091027190219/http://uk.geocities.com/cicottrell/images/getquicktime100x40psd.gif"> is incompatible with the GIF’s formats native color space: ARGB. The following command is just one example of a way of encoding Animated GIFs as digital video while maintaining their native color space and introducing no perceptible color shift:</p>
+<p>There are no visible artifacts of compression; however the careful observer will notice a subtle color shift. The above figure highlights the RGB value shift of one of the colors in the palette. This has occurred because the h.264 codec<img class="imgright" src="https://web.archive.org/web/20091027190219/http://uk.geocities.com/cicottrell/images/getquicktime100x40psd.gif"> is incompatible with the GIF’s formats native color space: ARGB. The following command is just one example of a way of encoding Animated GIFs as digital video while maintaining their native color space and introducing no perceptible color shift:</p>
 
 <pre> -c:v qtrle -pix_fmt argb</pre>
+<br><br><br>
+<img src="img/movcompare2.png">
+
 
 <p>We have identified two fundamental preservation risks here with the Animated GIF format: first the misinterpretation of instructional metadata, in this instance frame disposition. Second, the introduction of color shifts or even potentially compression artifacts through the process of encoding as video.</p>
 
