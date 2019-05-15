@@ -1,262 +1,356 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Password Protected Page</title>
-    <style>
-        html, body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        #dialogText {
-            padding: 10px 30px;
-            color: white;
-            background-color: #333333;
-        }
+﻿<html lang="en"><head><base href="." target="_top">
+  <meta charset="utf-8">
+
+  <title>Designing The Future</title>
+  <meta name="description" content="A case study on the collection and preservation of animated GIFs at the Museum of the Moving Image.">
+  <meta name="author" content="Small Data Industries">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="small_data_">
+<meta name="twitter:title" content="Designing The Future">
+<meta name="twitter:description" content="A strategic report on the colleciton and preservation of digital design.">
+<meta name="twitter:image" content="">
+
+<meta property="og:url" content="http://research.smalldata.industries/designing-the-future/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Designing The Future">
+<meta property="og:description" content="A strategic report on the colleciton and preservation of digital design.">
+<meta property="og:image" content="">
+
+<script async="" src="https://www.google-analytics.com/analytics.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-92578824-1', 'auto');ga('send', 'pageview');</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+   <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+          
+          <style type="text/css">
+
+
+@font-face {
+    font-family: chmed;
+    src: url(CooperHewitt-Medium.woff);
+}
+
+@font-face {
+    font-family: chdis;
+    src: url(CooperHewitt-Display.woff);
+}
+
+
+body{
+    background-color: #ececec;
+    color: #636363;
+  font-family:  chmed, monospace;
+  font-size: 23px;
+  line-height: 1.7em;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: chdis;
+  color: #909090;
+}
+
+.main .imgleft{
+  float: left;
+  margin-left: -150px;
+  padding-right: 35px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+}
+
+.leftpad{
+  margin-right: 50px;
+  margin-bottom: 25px;
+}
+
+.main .imgright{
+  float: right;
+  margin-right: -150px;
+  padding-left: 35px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+pre{
+  background-color: #222252;
+  color: #fce0ce;
+  padding: 20px;
+}
+
+table{
+  border: solid;
+}
+
+.caption{
+  font-size: .6em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.logo{
+  position: left;
+  margin-top: 0px;
+  margin-right: 100px;
+}
+
+.momilogo{
+  position: right;
+  margin-top: 0px;
+
+}
+
+.foreward{
+  background-color: #636363;
+  color: #d0d0d0;
+  font-family: monospace;
+  padding: 20px;
+  margin-left: -60px;
+  font-size: .5em;
+  line-height: 1em;
+  width: 200px;
+  margin-top: 25px;
+}
+
+a{
+  color: #61BC93;
+}
+
+.mainimg{
+    max-width: 100%;
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centergif{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.logo{
+  margin-left: -60px;
+}
+
+
+          </style>
+
+          <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Designing the Future of Design</h1>
+    <h4>A Vision for Collecting Digital Design at the Cooper Hewitt, Smithsonian Design Museum</h4>
+    <div class="row">
+      <div class="col s2">
+
+              <p class="foreward">
+          ! important;<br><br>
+          This report is open source. We welcome and encourage edits, corrections, and additions in the form of pull requests and issues on <a href="https://github.com/smalldata-industries/smalldata-industries.github.io/tree/master/designing-the-future">GitHub</a>.
+<br><br>
+         As well, this report is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+         <img src="https://static1.squarespace.com/static/54b507d4e4b09f5e24022654/t/5abeb0bb03ce6487317a1a89/1522446536717/SDI-Logo-Web-ONWHITE-2.png?format=750w" width="100%" class="logo">
+      </div>
+      <div class="col s8 main">
+
+<img src="img/ubiq.jpg" width="100%">
+<p>    Imagine if you will, fifty years from now, a class takes a field trip to the Cooper Hewitt, Smithsonian Design Museum to see an exhibition dedicated to the technologies designed in 2018: smartphones, laptops, tablets, smart-home assistants. The functions of these objects are readily apparent to us today, but what would they see in the future? And not only what, but how? How would they experience, touch, and interact with the exhibit? How would they understand the technologies that shaped our world? </p>
+
+<p>How do museums’ traditional acquisition, curatorial, and conservation practices need to change and evolve in order to facilitate this vision of the future?
+</p>
+
+<p>This is precisely the question posed by the Cooper Hewitt, Smithsonian Design Museum’s Digital Collections Materials Project (DCMP). For nearly two years, the institution has been engaged in an ambitious project to explore this topic by interrogating its past.</p>
+
+<p>The Cooper Hewitt has been collecting digital objects of design for decades, including personal computers, software, interactive robotic devices, and personal electronic devices. This is important work, and not just as a means of preserving cultural heritage and design history. The upheavals and revolutions in technology over the last half century have inspired a conversation about the impact of digital technology on society and the lived human experience; without an authentic historic record of what these changes looked like, and how they were implemented, we will not be able to think critically about our future. </p>
+
+<img src="img/zlite.jpg" class="imgright" width="70%">
+
+<p>In the field of cultural heritage preservation, there are two areas of research and practice that can help inform the way we consider the acquisition, care, and exhibition of digital design objects. First, there is “digital preservation.“ Digital preservation concerns itself with the long-term storage and protection of digital material, often that which is collected by libraries and archives: books, periodicals, web content, special collections, and so on. The second area is “time-based media art conservation.“ Originating in museums, it is concerned with the conservation of works of art that employ technologies like film, video, sound recording, and software as artistic materials. Digital preservation and time-based media conservation are highly interdisciplinary, often overlapping with and borrowing methodology from each other. Practitioners in both fields are on occasion faced with the task of preserving digital design materials. For instance, at the Museum of Modern Art, time-based media conservators have been responsible for several video games and digital fonts collected by the museum’s architecture and design department. The Canadian Center for Architecture has been considering for some time now how to collect and preserve digital architectural archives, which include computer-aided design files. The San Francisco Museum of Modern Art has also spent a considerable amount of time grappling with the challenge of conserving hybrid “physical-digital” design objects like the iPhone, Google Glass, and the Macintosh 128k, just to name a few.</p>
+
+<img src="img/gridrom.jpg" width="80%" class="imgleft">
+
+<p>The fact is, however, that there has never been a comprehensive effort by a museum that is purely focused on design to consider the peculiarities and logistics of collecting and preserving digital material. There is no existing precedent that thoroughly establishes a philosophy, not to mention a methodology or a set of best practices, for collecting and preserving design material that is digital or physical-digital in form.</p>
+
+<p>It is in this context and for this reason that in 2016 the Cooper Hewitt, Smithsonian Design Museum launched DCMP. Our mission was carried out in two phases: first, we conducted a complete survey of the museum‘s collection to compile a list of what objects could be considered digital or physical-digital, and to document their present condition both functionally and contextually. That is, did that object work and, if so, did the museum have the necessary components to run it?</p>
+
+<p>The second phase involved a series of in-depth case studies, each delving into the complex preservation challenges of a specific object that had been identified in the survey. We sought to fully investigate the manner in which these objects were originally collected, document their present state, cultivate a deep expertise of their constituent materials, extrapolate inherent preservation risks, and establish reusable techniques and methodologies for dealing with similar objects in the museum’s collection. This, we hope, can provide a vision as well as a roadmap for how these objects may be authentically and safely exhibited in the future. </p>
+
+<img src="img/nest.jpg" class="imgright" width="80%">
+
+<p>The objects selected for the series of case studies were: the Free Universal Construction Kit designed by Golan Levin, a never released functional IBM prototype called the Leapfrog, the Motorola Envoy, the GRiD Compass laptop, the NeXTcube computer, the iOS application Planetary, and an interactive robotic device called the Sketchbot.</p>
+
+<p>This report is the culmination of the DCMP. It summarizes the challenges found over the course of the survey and case studies, reviews the solutions and methodologies developed, and articulates a vision of how the Cooper Hewitt, Smithsonian Design Museum can play a critical part as a leader in the conservation of digital design materials.</p>
+
+<br><br>
+<h2>REVIEW OF THE CHALLENGES </h2>
+<p>We begin with an overview of the numerous difficulties that we encountered during the course of the case studies. In many ways, the challenges of conserving a museum’s digital design collection parallel the challenges found in the fields of digital preservation and time-based media conservation. In this study, we do not want to reinvent the wheel, but rather to build on the work of these disciplines and illuminate the unique complications presented by the intersection of design, the manufactured object, and a seemingly indexical digital collection.</p>
+
+<br><br>
+<h3>HARDWARE DEGRADATION, FAILURE, AND LOSS</h3>
+<p>The first and most pressing challenge is the obsolescence and degradation of hardware collected by the museum. As this report will discuss, software obsolescence is also a major concern, but it is driven and dictated by the decay of the physical objects on which that software is supposed to run.</p>
+
+<p>Electrolytic capacitors are cylindrical electronic components that are extremely common in electronic devices. These capacitors are filled with a liquid, or sometimes gel, which stores electrical energy. Generally speaking, the higher-power electronics are, the larger their capacitors will be. Over the course of time, even if they are not being used, the electrolytic capacitors found inside every kind of electronic device—from personal computers to cathode ray tube monitors to radios and televisions—will bulge and eventually leak their encased liquid, which is a corrosive material. </p>
+
+<img src="img/cap.jpg" class="imgleft" width="80%">
+
+<p>Hardware failure can be exacerbated by more than time. It is not uncommon for design museums to collect digital design objects that have physical components that museum visitors interact with. In addition to suffering from the usual hardware and software obsolescence, these kinds of public-oriented hardware will wear down and break due to repeated contact with museum visitors. Such hardware places a higher than usual burden on audiovisual technicians, registrars, art handlers, conservators, and other museum support staff. </p>
+
+<br><br>
+<h3>STORAGE MEDIA OBSOLESCENCE </h3>
+<p>It is no great revelation that digital storage media does not last forever. Considering the extent to which it has been covered within the fields of digital and time-based media conservation, this is something of a commonplace. However, the full implications of this obsolescence have not been fully explored in the context of design collection until now. Devices that were acquired by design museums two decades ago—long before time-based media conservation and digital preservation best practices were established—may not have undergone systematic, bit-level preservation of their storage media. <img src="img/scsi.jpg" width="90%" class="imgright">The more time passes after an object is collected and its storage media is not stabilized (whether in the form of a disk image or other medium-appropriate preservation format), the more likely it is that the equipment required to interface with the given storage medium has become incredibly rare or perhaps completely unavailable. For instance, with the tools readily available to museum conservators and digital archivists today, it is quite difficult to produce a disk image of a 2.5 inch SCSI hard drive due to the relatively short lifespan of this format. We must rely on highly specialized data recovery services for such media.</p>
+
+<p>The field of time-based media conservation has already begun to explore the implications of the fact that cathode ray tube monitors are no longer manufactured. Conservators, building on knowledge from video engineers and TV repair technicians, have established techniques for the maintenance, care, servicing, and repair of cathode ray tube monitors that are used in video art. Design collections, however, are likely to contain significant numbers of cathode ray tube monitors that were designed for use with personal computers.<img src="img/booterror.jpg" width="80%" class="imgleft"> These monitors vary greatly in color, space, size, shape, resolution, and dimensions, and the standards and practices borrowed from the broadcast industries do not directly translate to their maintenance and care.</p>
+
+<br><br><br>
+<h3>SOFTWARE OBSOLESCENCE</h3>
+<p>Software obsolescence is an unending challenge for digital design collections. Even if software does not, at its time of creation, appear to have any significant dependencies on particular hardware, external libraries, or modules, the fact is that software will always be inevitably intertwined with external databases, libraries, web services, operating systems, firmware, hardware peripherals, and CPU architecture. It is only a matter of time until these issues come to light. </p>
+
+<img src="img/code.jpg" width="100%">
+
+<p>Unfortunately, software obsolescence is very difficult to predict. One cannot inspect a particular piece of software and necessarily have a sense of how exactly it will become obsolete and when. There is, however, one major exception to this rule and that is mobile applications created for personal electronic devices such as smartphones. These applications are created for specific smartphone operating systems—most commonly today Apple’s iOS and Google's Android. These operating systems are being continually updated and it is usually safe to assume that applications made for them will be obsolete as soon as one year from their moment of creation. This is not just due to the obsolescence of the code but also due to the fact that distribution of these applications requires active upkeep and compliance with Apple or Google’s app stores.</p>
+
+<br><br>
+<h3>LOSS OF KNOWLEDGE </h3>
+<p>Thus far all of the challenges we have explored have been technological challenges: the degradation and obsolescence of hardware, the obsolescence of software, and the added complexity that is created when collection objects are interactive. Our research has found, however, that the gravest challenge faced by institutions collecting digital design material is the loss of human knowledge. The formats and materials found in the world of digital design are incredibly diverse—much more so than, say, the formats and materials used when preserving digital video files or textual materials. Museums that collect personal computers, personal electronic devices, and other examples of digital design are faced with a complicated history of formats, media storage devices, and evolving industry standards.
+
+</p><p>The preservation and care of these materials require collaboration with very niche subject matter experts who have cultivated and maintained an in-depth expertise in the engineering, reverse engineering, and preservation of a particular format, storage media, or digital product. This is, of course, no different than any other discipline of conservation, which all rely on collaborative relationships with engineers, fabricators, and scientists. With digital design objects, however, the range of specialists is incredibly diffuse and their areas of expertise incredibly discrete and unfortunately the number of experts is comparatively small. These experts are aging, and in some cases disappearing, before their knowledge can be passed down to others or gleaned by institutions.</p>
+
+<br><br><br>
+<h3>OBSOLESCENCE OF EQUIPMENT </h3>
+<p>The absence of hardware is a challenge that applies not only to collections objects themselves, but also to the very tools that conservators use in their labs on a daily basis. Tools for the preservation of digital materials are often highly specialized—designed to interact with a very particular format—and the creation and distribution of these tools is driven not by the needs of conservation but by commercial endeavors. For example, video conservators are faced with the imminent disappearance of the equipment required to play back and preserve analog tape media. </p>
+
+<br><br>
+<img src="img/ssd.jpg" width="100%">
+<br><br>
+
+<p>One prominent case of this situation in digital design preservation comes to mind. There have been many generations of USBs: all the way from USB 1.0 to USB 3.0 to USBC. When capturing and preserving storage media with USB interfaces, museum staff use devices called “forensic bridges” or, alternatively, “forensic write blockers,” and a particular one is needed for each USB generation. Unfortunately, write blockers are not created for the field of cultural heritage preservation; they are created for criminal digital forensic investigators. Therefore, as generations of USB become obsolete and fall out of common use with forensic investigators, the manufacturers stop producing the corresponding write blocker--indeed, it is already difficult to find USB 2.0 write blockers.</p>
+
+<img src="img/scsicard.jpg" width="70%" class="imgright">
+
+<p>This is not a challenge that museums will necessarily face for all material they collect—it is only when collecting historic material that the conservator will encounter obscure interface formats. For particularly rare or old formats, however,  it seems that collaboration with outside service providers will always be an inevitability.
+
+<br><br><br><br>
+</p><h3>LOSS OF AUTHENTICITY </h3>
+<p>The final challenge that we will review in this report is unique to design collections. In museums such as the Cooper Hewitt, Smithsonian Design Museum a significant number—in fact a majority—of collections items are examples of product design. The objects in the collection are mass-produced products. This is of course drastically different than the context of art conservation where, even when something is fabricated or editioned, it is still to some extent an artisanal object—something that was created, not manufactured.</p>
+
+<p>When conservators engage in the conservation of artwork the techniques and methods they employ often mirror those used by the artists themselves. Like the mechanics of art making, the act of art conservation is a slow and meticulous process. Even with the conservation of time-based media, if the work of art must be migrated to a new technology—in other words, if a new iteration of the work must be implemented—this process involves analytical thinking, but also creativity and material connoisseurship. It is not a process of manufacture.</p>
+
+<br><br>
+<img src="img/grid.jpg" width="100%">
+<br><br>
+
+
+<p>Now consider, if you will,  a mass-produced product that eventually suffers hardware and software obsolescence. Let’s say that the collections object can no longer be exhibited as it was originally manufactured because it has completely ceased to function. Or perhaps it still functions but is so rare that risking its demise through overuse is simply not an option. Can a museum exhibit something akin to a new iteration of this object? Does the concept of iteration even translate to the context of product design? </p>
+
+<p>It is important to note that all of the challenges described here are only understood as challenges if collections objects are well cared for. When collections objects are not given the care and attention that they require, these problems will simply pass undetected. Only by engaging digital design in a holistic way can we be sensitive to the opportunities we have to effectively preserve these objects. </p>
+
+<br><br>
+<h2>AN OVERVIEW OF SOME SOLUTIONS</h2>
+Here we will provide an overview of the numerous techniques and methodologies we encountered and developed through the course of this project. Again, we will not tread well-worn ground from the fields of digital preservation or time-based media conservation, but focus on the unique aspects of the digital design.
+
+<br><br><br><br>
+<h3>DEALING WITH HARDWARE</h3>
+Electrolytic capacitors should be dealt with in one of two ways: first, they can be left intact on the circuitry where they are found but systematically inspected on a periodic basis every one to two years. Depending on the institution (i.e., the size of the collection, the size of the staff, the exhibition schedule) this sort of periodic condition assessment may not be viable and as many as five to ten years may pass between objects getting this sort of attention by a conservator. In such cases, it would be advisable to take more preventive measures such as soldering, removing, and separately storing all electrolytic capacitors. If this methodology is employed, the object should be thoroughly photographed and documented prior to intervention. It is also helpful to produce a bill of materials—a list of all of the removed parts and their rating in microfarads and other characteristics of capacitors.
+
+<p>When exhibiting and displaying original vintage hardware—even when operating it inside the conservation lab for analysis—it is advisable to replace all electrolytic capacitors within the device with brand new replacements of similar specifications and ratings. This is a practice commonly known as “recapping.“ </p>
+
+<br>
+<img src="img/rolodex.jpg" width="100%">
+<br><br>
+
+<p>A similar approach is required with batteries. Batteries are found everywhere in collections of design materials: lithium ion or nickel cadmium batteries, found in everything from laptop computers to personal electronic devices. There are also smaller CMOS batteries, often found deeper in the internals of computational devices, used for maintaining certain system settings such as date and time. <img src="img/battery2.jpg" class="imgright" width="50%"> Although it has not yet become a standard practice in institutional conservation labs, batteries of all types, shapes, and sizes must always be removed and housed separately from the collections object before the object is put into storage. Not doing this places the collections object at significant risk.</p>
+
+<p>In addition to these two highly specific preventive techniques for the conservation of hardware, there is a rudimentary conservation technique that is not consistently practiced or even discussed in digital design conservation, but that should be considered standard operating practice.<img src="img/battery1.jpg" class="imgleft" width="40%"> When any kind of digital design is acquired—be it a personal computer, personal electronic device, interactive software, or robotics—video documentation capturing its look and feel at the time of acquisition should be conducted as a matter of course.</p>
+
+<br><br><br><br><br>
+<h3>TENDING THE SOFTWARE GARDEN</h3>
+<p>Although there are, in the case of hardware obsolescence, a few basic techniques that are surefire preventive conservation measures, things aren’t so simple when it comes to software obsolescence.
+</p>
+
+<p>Obsolescence is a social construct. It simply means that a product isn’t popular anymore. We as a society have chosen and decided that the product is no longer valuable: it has been replaced by one that is newer, faster, and better. Market forces then also replace the surrounding architecture (the operating system, systems firmware, and middleware) that provided functionality to the obsolete product. To make a long story short: there is nothing that we can do about software obsolescence.
+</p>
+
+<br>
+<img src="img/xcode.jpg" width="100%">
+<br><br>
+
+<p>In the field of digital preservation, emulation has become a standard method of dealing with software obsolescence. Emulation involves using a piece of software that simulates the functionality of a particular obsolete computer system. This allows a user to run an obsolete operating system, and thus obsolete software dependent on that operating system. Great effort has been made recently in the field of digital preservation to make emulation more accessible and useful for those working in cultural heritage preservation. There are many emulators that allow conservators and digital preservation practitioners to run a wide array of obsolete operating systems.</p>
+
+<p>Emulation is helpful when the object at hand is a contained and singular piece of software—for instance, if an institution was trying to run a piece of software designed to work only in Windows 3.1. Design collections, however, face more complicated examples of software obsolescence. There are devices in the collection of the Cooper Hewitt, Smithsonian Design Museum for which there simply is no emulator. One has never been created and its creation would be a massive undertaking. </p>
+
+<p>Although emulation is very successful when considering digital material of a certain vintage, when considering the recently obsolete—for instance an app made for the iPhone two years ago for which development has ceased—there are no options. Our research for the Cooper Hewitt, Smithsonian Design Museum has looked in particular at the obsolescence of iOS apps. The closest thing to emulation we have been able to facilitate is the assembly of a working development environment for the application so that it can be run with Apple’s proprietary Xcode iOS simulator.</p>
+
+<br>
+<img src="img/planetary.jpg" width="100%">
+<br><br>
+
+<p>When acquiring software it has become standard practice at cultural heritage institutions,  especially time-based media or conservation departments, to request that the creator provide the source code. To our knowledge, however, there have been very few practical studies actually exploring the utility of having this source code, with the exception of recent research conducted at Rhizome and the Guggenheim on the conservation of web-based artworks.</p>
+
+<p>When collecting software-based mobile applications in particular we do recommend that source code be collected, but we would extend our recommendations and also suggest that a snapshot of a functional development environment either be collected or created and assembled by a conservator. Having source code is one thing, but if you do not have an environment that is capable of interpreting, assembling, and building this source code into a functional application, its utility is extremely limited. In the case of iOS apps, which have a lack of existing emulators, having an encapsulated development environment does at least allow someone to view and interact with the app within the iOS simulator. But what about actually restoring something to true functionality?  If the will and resources exist to maintain the functionality of a software-based design object how does an institution approach this?</p>
+
+<p>After looking at the place of obsolete iOS applications in museum collections, we have concluded that if the collecting institution’s objective is to maintain the functionality of the application over the long term—not merely to preserve its source code as an object of study and research—an entirely new frame of thinking of conservation is needed. Rather than approaching the care of app-based digital design in the same manner that one would approach the care of physical objects (where preventive measures are taken to slow degradation and periodic collection surveys are conducted to establish a baseline condition and discover any issues needing attention), we propose that the only viable strategy for the long term preservation of iOS applications and other complex software is a continual and ongoing act of stewardship.</p>
+
+
+<img src="img/planetary-shelf.jpg" width="70%" class="imgleft">
+
+
+<p>To put it simply: if an iOS application is allowed to age for five years, the effort required to return this application to a functional state that is compatible with contemporary platforms will demand an incredibly significant investment of time and resources: over a month of full-time labor by a skilled iOS developer. But if the museum engages in a model like the sort of maintenance, upgrades, and patches that a product development studio making apps would engage in—say, upgrading the application in question on the occasion of any new major iOS release—this would result in a far more sustainable model. The effort required to keep an application functional from one version of iOS to the immediately succeeding version of iOS is exponentially smaller than the effort required to bring an application from, say, iOS version 7 to iOS version 12.</p>
+
+<p>We call this methodology the “gardening approach” to software conservation: by committing to a certain baseline of regular upkeep, less effort is required than if software is put aside for too long.
+</p>
+
+<br><br>
+<h3>EXPANDED AND COLLABORATIVE COLLECTING</h3>
+<p>Our next recommendation may seem to extend beyond the mandate of conservation and collections care, as its central focus is the logistics of acquisition. However, in the case of digital design, much as with time-based media, the point of acquisition is critical and in many ways dictates the future life and longevity of the object in question. So far, digital design has been acquired like any other museum object: it is purchased or gifted. Either way, the transaction is between the museum and one party, often a donor. Due to the Cooper Hewitt, Smithsonian Design Museum’s meaningful relationships with industry, its donors are often designers themselves who played a critical role in the design and construction of the objects in question. Through this study, however, the museum has pressed us with expanding its conception of the object and asked us to consider the holistic “thing.“ We have found that taking on this frame of mind as an institution would require an acquisition process that involves numerous individuals, not a single designer or even design team.</p>
+
+<img src="img/envoy1.jpg" width="100%">
+
+<p>Take the Motorola Envoy. This object was a gift of the Motorola corporation and it was collected as an example of industrial design. However, running inside it we found the Magic operating system, a hugely influential piece of software that came from the company General Magic. To provide some background: General Magic was established by a team that left Apple to develop a new kind of personal electronic device. This team’s vision sounds a lot like where we are today: a world with small, incredibly intelligent computers in our pockets where we keep our contacts, our personal calendars, and our memories, and can access all the world’s information. General Magic’s story was recently documented in General Macic the movie , shown at the Tribeca Film Festival in 2017. <img src="img/envoy2.jpg" width="80%" class="imgright">General Magic’s vision was so ambitious that they were unable to achieve it alone. They recruited a handful of companies who were not only investors but also key technical collaborators: Sony and Motorola for hardware and AT&amp;T and ARDIS for telecommunications. Motorola in turn enlisted the services of Frog Design to do the industrial design of the device. This kind of design process, akin in some ways to the gesamtkunstwerk, or integrated design, led to the collaboration of massive specialist teams, a process that now is commonplace. Every technical device since has been the result of such collaborations. Even when Apple releases a new product, behind the scenes they have worked with outside firms for various layers of the design. In some cases, these companies are acquired and end up working for Apple—such was the case with the company that made Siri. </p>
+
+<p>Let’s return to the Motorola Envoy. It entered the Cooper Hewitt’s collection as a physical object. With holistic preservation and curation of this object, museumgoers now and in the future will appreciate not merely the industrial design accomplished by Frog Design, but also the interaction design and interface design accomplished by General Magic. Ideally, Cooper Hewitt would have used a collaborative acquisition process so that they<img src="img/bench.jpg" width="80%" class="imgleft"> could have collected supporting and ancillary materials such as software, source code, firmware, sketches, designs, and so on. Otherwise, when we are tasked with the holistic care and curation after the fact of acquisition, we are left to resort to reverse engineering conservation methodologies that are quite costly and complex. </p>
+
+<br><br><br>
+<h3>KNOWLEDGE EXCHANGE</h3>
+<p>We would like to end on the question of the loss of human knowledge. The course of this project has brought the Cooper Hewitt team into contact with numerous technical experts who have extremely niche specialist knowledge.
+
+<br><br>
+<img src="img/team.jpg" width="100%">
+<br><br>
+It is our feeling that if the ecosystem of collections care professionals, conservators, outside technical experts, and collaborators is to successfully support the preservation of digital material, museums must serve as sites for the bidirectional exchange of expert knowledge. In other words, rather than forming collaborative relationships with technical experts and utilizing their knowledge for the purposes of conservation, museums should be a place where experts’ knowledge can be shared with the public, not only museum professionals. Be it a special technique for the forensic disk imaging of an obsolete hard drive interface format, or a technique for reverse engineering an integrated circuit, these methods simply must be passed down to future generations if they are to survive. How might the museum serve as a conduit for this knowledge, transmitting it outside of their walls?</p>
+
+<br><br>
+<h2>THE VIEW OF THE FUTURE FROM HERE</h2>
+<p>This report marks an incredibly exciting moment in the evolution of the acquisition, curation, and care of digital design material. The Cooper Hewitt, Smithsonian Design Museum has invested deeply in exploring the myriad questions and challenges involved in these practices, which until now had not been fully investigated. With its focus purely on design, its impeccable curatorial track record, its location in a city rich in technical expertise, and with visionary curators, conservators, and collections care professionals, the Cooper Hewitt, Smithsonian Design Museum is incredibly well positioned to serve as a guiding light for how other institutions may treat digital design materials. The digital preservation and time-based media conservation fields have established very solid foundations for the conservation of digital design to build upon; however, considerations in the context of design are unavoidably distinct from those that arise when collecting archival materials or fine art. Who better to design a new frame of thinking than a design museum?</p>
+
+<p>So what does the future of collecting and conserving digital design look like?  We envision an experience of the visitor in the future who has never held an iPhone not only appreciating its industrial design but experiencing a constellation of related artifacts: objects, sketches of design concepts, early functional prototypes as sculptural objects, interactive software emulations that allow you to send text messages, videos of the original product being used, and artisanally-crafted study objects. Taken together, these materials will foster a multidimensional understanding of the way that digital and technical design has, in so many ways, designed how we experience and interact with the world.</p>
+
+<p>We should think big.</p>
+
+
+      </div>
+
+      <div class="col s1">
         
-        #dialogWrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: table;
-            background-color: #EEEEEE;
-        }
-        
-        #dialogWrapCell {
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-        }
-        
-        #mainDialog {
-            width: 500px;
-            border: solid #AAAAAA 1px;
-            border-radius: 10px;
-            box-shadow: 3px 3px 5px 3px #AAAAAA;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #FFFFFF;
-            overflow: hidden;
-            text-align: left;
-        }
-        #passArea {
-            padding: 20px 30px;
-            background-color: white;
-        }
-        #passArea > * {
-            margin: 5px auto;
-        }
-        #pass {
-            width: 100%;
-            height: 40px;
-            font-size: 30px;
-        }
-        
-        #messageWrapper {
-            float: left;
-            vertical-align: middle;
-            line-height: 30px;
-        }
-        
-        .notifyText {
-            display: none;
-        }
-        
-        #invalidPass {
-            color: red;
-        }
-        
-        #success {
-            color: green;
-        }
-        
-        #submitPass {
-            font-size: 20px;
-            border-radius: 5px;
-            background-color: #E7E7E7;
-            border: solid gray 1px;
-            float: right;
-        }
-        #contentFrame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-  </head>
-  <body>
-    <iframe id="contentFrame" frameBorder="0"></iframe>
-    <div id="dialogWrap">
-        <div id="dialogWrapCell">
-            <div id="mainDialog">
-                <div id="dialogText">This page is password protected.</div>
-                <div id="passArea">
-                    <p id="passwordPrompt">Password</p>
-                    <input id="pass" type="password" name="pass">
-                    <div>
-                        <span id="messageWrapper">
-                            <span id="invalidPass" class="notifyText">Sorry, please try again.</span>
-                            <span id="success" class="notifyText">Success!</span>
-                            &nbsp;
-                        </span>
-                        <button id="submitPass" type="button">Submit</button>
-                        <div style="clear: both;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/pbkdf2.js"></script>
-    <script>
-        /*! srcdoc-polyfill - v0.1.1 - 2013-03-01
-        * http://github.com/jugglinmike/srcdoc-polyfill/
-        * Copyright (c) 2013 Mike Pennisi; Licensed MIT */
-        (function( window, document, undefined ) {
-	
-	        var idx, iframes;
-	        var _srcDoc = window.srcDoc;
-	        var isCompliant = !!("srcdoc" in document.createElement("iframe"));
-	        var implementations = {
-		        compliant: function( iframe, content ) {
+  </div>        
 
-			        if (content) {
-				        iframe.setAttribute("srcdoc", content);
-			        }
-		        },
-		        legacy: function( iframe, content ) {
 
-			        var jsUrl;
 
-			        if (!iframe || !iframe.getAttribute) {
-				        return;
-			        }
 
-			        if (!content) {
-				        content = iframe.getAttribute("srcdoc");
-			        } else {
-				        iframe.setAttribute("srcdoc", content);
-			        }
-
-			        if (content) {
-				        // The value returned by a script-targeted URL will be used as
-				        // the iFrame's content. Create such a URL which returns the
-				        // iFrame element's `srcdoc` attribute.
-				        jsUrl = "javascript: window.frameElement.getAttribute('srcdoc');";
-
-				        iframe.setAttribute("src", jsUrl);
-
-				        // Explicitly set the iFrame's window.location for
-				        // compatability with IE9, which does not react to changes in
-				        // the `src` attribute when it is a `javascript:` URL, for
-				        // some reason
-				        if (iframe.contentWindow) {
-					        iframe.contentWindow.location = jsUrl;
-				        }
-			        }
-		        }
-	        };
-	        var srcDoc = window.srcDoc = {
-		        // Assume the best
-		        set: implementations.compliant,
-		        noConflict: function() {
-			        window.srcDoc = _srcDoc;
-			        return srcDoc;
-		        }
-	        };
-
-	        // If the browser supports srcdoc, no shimming is necessary
-	        if (isCompliant) {
-		        return;
-	        }
-
-	        srcDoc.set = implementations.legacy;
-
-	        // Automatically shim any iframes already present in the document
-	        iframes = document.getElementsByTagName("iframe");
-	        idx = iframes.length;
-
-	        while (idx--) {
-		        srcDoc.set( iframes[idx] );
-	        }
-
-        }( this, this.document ));
-    </script>
-    <script>
-        var pl = {"salt":"xSaR2NGAItAEzH/ML5LEBU/DBcaf6GT7VlykcNFPtG0=","iv":"ICe3Z/dh+rW5n0ZHD2aaYA==","data":"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"};
-        
-        var submitPass = document.getElementById('submitPass');
-        var passEl = document.getElementById('pass');
-        var invalidPassEl = document.getElementById('invalidPass');
-        var successEl = document.getElementById('success');
-        var contentFrame = document.getElementById('contentFrame');
-        
-        if (pl === "") {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
-        }
-        
-        function doSubmit(evt) {
-            try {
-                var decrypted = decryptFile(CryptoJS.enc.Base64.parse(pl.data), passEl.value, CryptoJS.enc.Base64.parse(pl.salt), CryptoJS.enc.Base64.parse(pl.iv));
-                if (decrypted === "") throw "No data returned";
-                
-                // Set default iframe link targets to _top so all links break out of the iframe
-                decrypted = decrypted.replace("<head>", "<head><base href=\".\" target=\"_top\">");
-                
-                srcDoc.set(contentFrame, decrypted);
-                
-                successEl.style.display = "inline";
-                passEl.disabled = true;
-                submitPass.disabled = true;
-                setTimeout(function() {
-                    dialogWrap.style.display = "none";
-                }, 1000);
-            } catch (e) {
-                invalidPassEl.style.display = "inline";
-                passEl.value = "";
-            }
-        }
-        
-        submitPass.onclick = doSubmit;
-        passEl.onkeypress = function(e){
-            if (!e) e = window.event;
-            var keyCode = e.keyCode || e.which;
-            invalidPassEl.style.display = "none";
-            if (keyCode == '13'){
-              // Enter pressed
-              doSubmit();
-              return false;
-            }
-        }
-        
-        function decryptFile(contents, password, salt, iv) {
-            var _cp = CryptoJS.lib.CipherParams.create({
-                ciphertext: contents
-            });
-            var key = CryptoJS.PBKDF2(password, salt, { keySize: 256/32, iterations: 100 });
-            var decrypted = CryptoJS.AES.decrypt(_cp, key, {iv: iv});
-            
-            return decrypted.toString(CryptoJS.enc.Utf8);
-        }
-    </script>
-  <script>
-            //If there is no trailing slash after the path in the url, add it
-            if (!window.location.pathname.endsWith('/') && !window.location.pathname.includes(".") && !document.title.includes("404 File Not Found")) { // ick, please forgive me...
-                var url = window.location.protocol + '//' +
-                        window.location.host +
-                        window.location.pathname + '/' +
-                        window.location.search;
-        
-                window.history.replaceState(null, document.title, url);
-            }
-        </script></body>
-</html>
+<div class="hiddendiv common"></div></body></html>
